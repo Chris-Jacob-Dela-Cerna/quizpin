@@ -10,7 +10,8 @@ from checker.checker import check_quizzes
 def manage_quizzes():
     abs_filedir = os.path.abspath(__file__)
     filedir = os.path.dirname(abs_filedir)
-    quiz_path = os.path.join(filedir, "quizzes")
+    root = os.path.dirname(filedir)
+    quiz_path = os.path.join(root, "quizzes")
     os.makedirs(quiz_path, exist_ok=True)
     quizzes = os.listdir(quiz_path)
 
