@@ -1,4 +1,4 @@
-# Document: This python is my 2nd application of CS50P Week 6.
+
 
 import sys
 from utils import validation as val
