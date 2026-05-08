@@ -1,7 +1,7 @@
 
 
 import random
-from utils.checker import check_score
+from utils import scoring as scr
 
 
 def identification(quiz_items):
@@ -24,7 +24,7 @@ def identification(quiz_items):
         if user_answer == item["answer"].strip().lower():
             score += 1
 
-    message, outline = check_score(score, idx)
+    message, outline = scr.check_score(score, idx)
     input(
         f"\n{outline}"
         f"\n {message}"

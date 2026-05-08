@@ -2,8 +2,7 @@
 
 import csv
 import os
-from utils.checker import if_yes
-from utils.checker import check_name
+from utils import validation as val
 
 
 def create_quiz():
@@ -53,7 +52,7 @@ def create_quiz():
     )
     while True:
         user_file = input("User:     ")
-        result, file_name = check_name(user_file, quizzes)
+        result, file_name = val.check_name(user_file, quizzes)
         match result:
             case True:
                 pass
@@ -63,7 +62,7 @@ def create_quiz():
                     "\n          Would you like to overwrite? Enter y or n."
                 )
                 user = input("User:     ")
-                if not if_yes(user):
+                if not val.if_yes(user):
                     print("Quizpin:  Name the file you'll be storing your items in.")
                     continue
             case None:

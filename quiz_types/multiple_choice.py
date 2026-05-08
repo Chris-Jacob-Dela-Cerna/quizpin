@@ -1,7 +1,7 @@
 
 
 import random
-from utils.checker import check_score
+from utils import scoring as scr
 
 
 def multiple_choice(quiz_items):
@@ -29,7 +29,7 @@ def multiple_choice(quiz_items):
         except KeyError:
             pass
     
-    message, outline = check_score(score, idx)
+    message, outline = scr.check_score(score, idx)
     input(
         f"\n{outline}"
         f"\n {message}"

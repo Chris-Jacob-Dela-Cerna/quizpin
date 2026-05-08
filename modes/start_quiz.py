@@ -2,9 +2,7 @@
 
 import csv
 import os
-from utils.checker import checker
-from utils.checker import if_yes
-from utils.checker import check_quizzes
+from utils import validation as val
 from quiz_types.multiple_choice import multiple_choice
 from quiz_types.identification import identification
 
@@ -17,7 +15,7 @@ def start_quiz():
     os.makedirs(quiz_path, exist_ok=True)
     quizzes = os.listdir(quiz_path)
 
-    if not check_quizzes(quizzes):
+    if not val.check_quizzes(quizzes):
         input(
             "Quizpin:  You have not created a quiz yet."
             "\n          Select a) to create a quiz!"
@@ -38,7 +36,7 @@ def start_quiz():
 
     while True:
         chosen = input("User:     ")
-        result = checker(chosen, quiz_list)
+        result = val.checker(chosen, quiz_list)
         if result:
             break
         else:
@@ -62,7 +60,7 @@ def start_quiz():
 
     while True:
         chosen = input("User:     ")
-        result = checker(chosen, quiz_types)
+        result = val.checker(chosen, quiz_types)
         if result:
             break
         else:
@@ -78,7 +76,7 @@ def start_quiz():
         "\n          Enter y or n."
     )
     user = input("User:     ")
-    if if_yes(user):
+    if val.if_yes(user):
         show_results(quiz)
 
 

@@ -1,10 +1,8 @@
 
 
 import os
-from utils.checker import checker
-from utils.checker import check_prefix
-from utils.checker import check_name
-from utils.checker import check_quizzes
+from utils import validation as val
+from utils import commands as com
 
 
 def manage_quizzes():
@@ -15,7 +13,7 @@ def manage_quizzes():
     os.makedirs(quiz_path, exist_ok=True)
     quizzes = os.listdir(quiz_path)
 
-    if not check_quizzes(quizzes):
+    if not val.check_quizzes(quizzes):
         input(
             "Quizpin:  You have not created a quiz yet."
             "\n          Select a) to create a quiz!"
@@ -47,12 +45,12 @@ def manage_quizzes():
     }
     while True:
         user = input("User:     ")
-        chosen, tool = check_prefix(user, tools)
+        chosen, tool = com.check_prefix(user, tools)
         if chosen:
             if tool == tools["l-"]:
                 break
             else:
-                selected_quiz = checker(chosen[2:], quiz_list)
+                selected_quiz = val.checker(chosen[2:], quiz_list)
                 if selected_quiz:
                     break
                 else:
@@ -78,7 +76,7 @@ def rename_file(quiz_path, selected_quiz):
     )
     while True:
         user_file = input("User:     ")
-        result, file_name = check_name(user_file, quizzes)
+        result, file_name = val.check_name(user_file, quizzes)
         match result:
             case True:
                 break
