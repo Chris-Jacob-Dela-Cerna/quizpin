@@ -20,7 +20,7 @@ def test_if_yes():
 
 
 def test_check_quizzes():
-    lst = ["fruits.csv"]
+    lst = ["fruits.csv",]
     empty_lst = []
     assert ck.check_quizzes(lst) == True
     assert ck.check_quizzes(empty_lst) == False
@@ -37,8 +37,18 @@ def test_check_score():
 
 
 def test_check_prefix():
-    pass
+    dct = {"r-": "rename",}
+    assert ck.check_prefix("r-", dct) == ("r-", "rename")
+    assert ck.check_prefix("  r-  ", dct) == ("r-", "rename")
+    assert ck.check_prefix("R-", dct) == ("r-", "rename")
+    assert ck.check_prefix("r", dct) == (None, None)
+    assert ck.check_prefix("", dct) == (None, None)
 
 
 def test_check_name():
-    pass
+    lst = ["fruits_and_colors.csv",]
+    assert ck.check_name("colors_and_fruits", lst) == (True, "colors_and_fruits")
+    assert ck.check_name("colors and fruits", lst) == (True, "colors_and_fruits")
+    assert ck.check_name("fruits_and_colors", lst) == (False, "fruits_and_colors")
+    assert ck.check_name("fruits and colors", lst) == (False, "fruits_and_colors")
+    assert ck.check_name("", lst) == (None, None)
