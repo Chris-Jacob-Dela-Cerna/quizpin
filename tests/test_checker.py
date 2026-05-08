@@ -26,7 +26,6 @@ def test_check_quizzes():
     assert ck.check_quizzes(empty_lst) == False
 
 
-
 def test_check_score():
     total = 10
     assert ck.check_score(10, total) == ("A perfect score, bravo!", "=========================")
