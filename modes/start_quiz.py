@@ -2,9 +2,9 @@
 
 import csv
 import os
-from checker.checker import checker
-from checker.checker import if_yes
-from checker.checker import check_quizzes
+from utils.checker import checker
+from utils.checker import if_yes
+from utils.checker import check_quizzes
 from quiz_types.multiple_choice import multiple_choice
 from quiz_types.identification import identification
 

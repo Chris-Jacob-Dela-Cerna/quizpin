@@ -1,7 +1,7 @@
 
 
 import random
-from checker.checker import check_score
+from utils.checker import check_score
 
 
 def identification(quiz_items):

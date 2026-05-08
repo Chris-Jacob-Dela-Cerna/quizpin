@@ -2,8 +2,8 @@
 
 import csv
 import os
-from checker.checker import if_yes
-from checker.checker import check_name
+from utils.checker import if_yes
+from utils.checker import check_name
 
 
 def create_quiz():

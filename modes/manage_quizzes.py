@@ -1,10 +1,10 @@
 
 
 import os
-from checker.checker import checker
-from checker.checker import check_prefix
-from checker.checker import check_name
-from checker.checker import check_quizzes
+from utils.checker import checker
+from utils.checker import check_prefix
+from utils.checker import check_name
+from utils.checker import check_quizzes
 
 
 def manage_quizzes():

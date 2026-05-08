@@ -1,7 +1,7 @@
 # Document: This python is my 2nd application of CS50P Week 6.
 
 import sys
-from checker.checker import checker
+from utils.checker import checker
 from modes.create_quiz import create_quiz
 from modes.start_quiz import start_quiz
 from modes.manage_quizzes import manage_quizzes

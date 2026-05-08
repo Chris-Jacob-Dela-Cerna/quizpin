@@ -1,6 +1,6 @@
 
 
-from checker import checker as ck
+from utils import checker as ck
 
 
 def test_checker():
