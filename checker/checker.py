@@ -25,7 +25,7 @@ def check_score(score, total):
         message = "A perfect score, bravo!"
     elif percentage >= 75:
         message = "What a great run!"
-    elif percentage == 50:
+    elif percentage >= 50:
         message = "Well done! Solid work."
     elif percentage >= 25:
         message = "You're getting there!"
