@@ -1,7 +1,7 @@
 # Document: This python is my 2nd application of CS50P Week 6.
 
 import sys
-from quizpin.utils.validation import checker
+from utils import validation as val
 from modes.create_quiz import create_quiz
 from modes.start_quiz import start_quiz
 from modes.manage_quizzes import manage_quizzes
@@ -28,7 +28,7 @@ def main():
 
         while True:
             chosen = input("User:     ")
-            result = checker(chosen, modes)
+            result = val.checker(chosen, modes)
             if result:
                 break
             else:
